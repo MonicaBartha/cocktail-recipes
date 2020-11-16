@@ -1,17 +1,21 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
+import CategoryProvider from './context/CategoryContext';
+import RecipesProvider from './context/RecipesContext';
 
 function App() {
   return (
-    <Fragment>
+    <CategoryProvider>
+      <RecipesProvider>
         <Header />
         <div className="container mt-5">
           <div className="row">
             <Form />
           </div>
         </div>
-    </Fragment>
+      </RecipesProvider>
+    </CategoryProvider>
   );
 }
 
