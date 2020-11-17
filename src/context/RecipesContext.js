@@ -32,6 +32,7 @@ const RecipesProvider = (props) => {
     return (
         <RecipesContext.Provider
             value={{
+                recipes,
                 setSearchRecipe,
                 setRequest
             }}

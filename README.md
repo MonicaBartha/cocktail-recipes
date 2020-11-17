@@ -1,6 +1,7 @@
 ## Cocktail Recipes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React.js, hooks
+CSS with Bootstrap, and Material UI for modal.
 
 ### useContext
 
