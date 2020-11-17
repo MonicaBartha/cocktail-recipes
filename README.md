@@ -1,15 +1,17 @@
 ## Cocktail Recipes
 
-React.js, hooks
-CSS with Bootstrap, and Material UI for modal.
+This app is created with React.js, hooks, CSS with Bootstrap and Material UI for recipe modal.
 
-### useContext
+### Deploy
 
-un useContext para Categorias.
-otro useContext para recetas
+https://cocktail-recipes-app.netlify.app/
 
 ### API
 
 https://thecocktaildb.com/api.php
 
-### Deploy
+### useContext:
+
+- CategoryContext
+- ModalContext
+- RecipesContext

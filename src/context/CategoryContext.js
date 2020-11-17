@@ -1,4 +1,4 @@
-// data flows from this file, not from app.js
+// data flows from this file
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -26,7 +26,6 @@ const CategoryProvider = (props) => {
             {categories}
             }
         >
-            
             {props.children}
         </CategoryContext.Provider>
     )

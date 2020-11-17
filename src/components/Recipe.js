@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import {ModalContext} from '../context/ModalContext';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 function getModalStyle() {
     const top = 50 ;
@@ -17,10 +18,14 @@ function getModalStyle() {
 const useStyles = makeStyles(theme => ({
     paper: {
       position: 'absolute',
-      width: 450,
+      width: 300,
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
+      overflow: 'scroll',
+      height: '80%',
+      maxHeight: 500,
+      display: 'block'
     },
 }));
 
@@ -48,7 +53,12 @@ const Recipe = ({recipe}) => {
         for (let i=1; i< 16; i++) {
             if(info[`strIngredient${i}`]) {
                 ingredients.push(
-                    <li> {info[`strIngredient${i}`]} {info[`strMeasure${i}`]} </li>
+                    <li key={
+                        info[`strIngredient${i}`] +
+                        info[`strMeasure${i}`]
+                    }> 
+                        {info[`strIngredient${i}`]} {info[`strMeasure${i}`] }  
+                    </li>
                 )
             }
         }
@@ -84,7 +94,7 @@ const Recipe = ({recipe}) => {
                            <h3 className="mt-4">Instructions</h3>
                            <p> {recipeInfo.strInstructions} </p>
                            <img className="img-fluid" src={recipeInfo.strDrinkThumb} alt={recipeInfo.strDrink} />
-                           <h3>Igredients and quantities</h3>
+                           <h3>Ingredients and quantities</h3>
                            <ul>
                                {showIngredients(recipeInfo)}
                            </ul>
@@ -96,4 +106,7 @@ const Recipe = ({recipe}) => {
     )
 }
 
+Recipe.propTypes = {
+    recipe: PropTypes.object.isRequired
+}
 export default Recipe;

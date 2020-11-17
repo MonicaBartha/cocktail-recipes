@@ -20,13 +20,13 @@ const Form = () => {
             [e.target.name] : e.target.value
         })
     }
-
+    
     return (
         <form 
             className="col-12"
-            onSubmit={ e => {
+            onSubmit={e => {
                 e.preventDefault();
-                setSearchRecipe(search);
+                setSearchRecipe(search) 
                 setRequest(true);
             }}
         >
@@ -34,16 +34,16 @@ const Form = () => {
                 <legend>Search recipes by category or ingredients</legend>
             </fieldset>
             <div className="row mt-4">
-                <div className="col-md-4">
+                <div className="col-md-4 mb-2">
                     <input
                         name="ingredient"
                         className="form-control"
                         type="text"
-                        placeholder="Search by Ingredient"
+                        placeholder="Ingredient, ex: rum, tequila etc"
                         onChange={getData}
                     />
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 mb-2">
                     <select
                         className="form-control"
                         name="category"
@@ -65,6 +65,7 @@ const Form = () => {
                     />
                 </div>
             </div>
+            
         </form>
     )
 }
